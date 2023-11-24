@@ -1,0 +1,1223 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="show_calendar.css" />
+    <link
+      rel="icon"
+      href="https://www.shapelink.com/favicon.ico"
+      type="image/x-icon"
+    />
+    <script
+      src="https://kit.fontawesome.com/91ae98990f.js"
+      crossorigin="anonymous"
+    ></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Twiik</title>
+  </head>
+  <body>
+    <!--Navigation Bar Code starts here-->
+    <!-- <div class="navbar"> 
+        <div class="navbar__top">
+            <div class="left__side">
+                <img class="navbar__logo" src="https://www.shapelink.com/images/logo.png">
+                <div class="link__div  current__page__div">
+                    <a class="top__links  current__page__link" href="https://example.com">Exercise Log</a>
+                </div>
+                <div class="link__div">
+                    <a class="top__links" href="https://example.com">Results</a>
+                </div>
+                <div class="link__div">
+                    <a class="top__links" href="https://example.com">Challenges</a>
+                </div>
+                <div class="link__div">
+                    <a class="top__links" href="https://example.com">Friends</a>
+                </div>
+                <div class="link__div">
+                    <a class="top__links" href="https://example.com">Groups</a>
+                </div>
+            </div>
+            <div class="right__side">
+            
+            </div>
+        </div>
+        
+    </div> -->
+    <div class="navbar">
+      <div class="navbar__top">
+        <div class="left__side">
+          <img
+            class="navbar__logo"
+            src="https://www.shapelink.com/images/logo.png"
+          />
+          <div class="link__div current__page__div">
+            <a class="top__links current__page__link" href="https://example.com"
+              >Exercise Log</a
+            >
+          </div>
+          <div class="link__div">
+            <a class="top__links" href="https://example.com">Results</a>
+          </div>
+          <div class="link__div">
+            <a class="top__links" href="https://example.com">Challenges</a>
+          </div>
+          <div class="link__div">
+            <a class="top__links" href="https://example.com">Friends</a>
+          </div>
+          <div class="link__div">
+            <a class="top__links" href="https://example.com">Groups</a>
+          </div>
+        </div>
+        <div class="right__side">
+          <div class="login_info">
+            <span>Logged in as</span> <span id="login_info"></span>
+            <p class="log_out">Log out</p>
+          </div>
+          <div class="login_icon">
+            <div class="login_icon_img">
+              <img src="login_logo1.png" alt="" />
+            </div>
+            <!-- <div class="login_icon_img">
+                                <img src="login_logo2.png" alt="" />
+                            </div>
+                            <div class="login_icon_img">
+                                <img src="login_logo3.png" alt="" />
+                            </div> -->
+          </div>
+        </div>
+      </div>
+      <div class="navbar__bottom">
+        <div class="link__div">
+            <a class="bottom__link current__subpage__link" href="https://example.com">Show Calendar</a>
+        </div>
+        <div class="link__div">
+            <a class="bottom__link" href="https://example.com">My Things</a>
+        </div>
+        <div class="link__div">
+            <a class="bottom__link" href="https://example.com">Routines</a>
+        </div>
+        <div class="link__div">
+            <a class="bottom__link" href="https://example.com">Tracks</a>
+        </div>
+        <div class="link__div">
+            <a class="bottom__link" href="https://example.com">Equipment</a>
+        </div>
+        <div class="link__div">
+            <a class="bottom__link" href="https://example.com">Import</a>
+        </div>
+    </div>
+    </div>
+    <!--Navigation Bar Code Ends here-->
+
+    <div class="calendar__div">
+      <p class="calendar__title">My Training Diary</p>
+      <div class="month__states">
+        <div class="month__states__div1">
+          <p>November 2023</p>
+        </div>
+        <div class="month__states__div2">
+          <p>Trained this month</p>
+          <div class="current__states">
+            <p>Workouts:</p>
+            <p class="states__number">0</p>
+            <p>Time:</p>
+            <p class="states__number">0 min</p>
+            <p>Average:</p>
+            <p class="states__number">0 min</p>
+          </div>
+        </div>
+        <div class="month__states__div3">
+          <button id="add__to__calendar" class="add__button">
+            ADD TO YOUR CALENDAR
+          </button>
+        </div>
+      </div>
+      <div class="calendar">
+        <div class="days">
+          <div id="blank"></div>
+          <div class="day__name__box">
+            <p>Monday</p>
+          </div>
+          <div class="day__name__box">
+            <p>Tuesday</p>
+          </div>
+          <div class="day__name__box">
+            <p>Wednesday</p>
+          </div>
+          <div class="day__name__box">
+            <p>Thurday</p>
+          </div>
+          <div class="day__name__box">
+            <p>Friday</p>
+          </div>
+          <div class="day__name__box">
+            <p>Saturday</p>
+          </div>
+          <div class="day__name__box">
+            <p>Sunday</p>
+          </div>
+        </div>
+
+        <div class="display__flex">
+          <div class="week__number__div">
+            <p>53</p>
+          </div>
+          <div class="day__box"></div>
+          <div class="day__box"></div>
+          <div class="day__box"></div>
+          <div class="day__box"></div>
+          <div id="day1__box " class="day__box date__box">
+            <div id="day1__task" class="day__task"></div>
+            <div id="day1__states" class="day__states">
+              <p class="day__number">1</p>
+              <i
+                id="day1_btn"
+                onClick="return_id(this.id)"
+                class="fas add__button fa-plus-circle fa-sm"
+              ></i>
+            </div>
+            <div id="box__content1" class="box__content">
+              <div class="popup">
+                <p>Friday 1 November 2023</p>
+              </div>
+            </div>
+          </div>
+
+          <div id="day2__box" class="day__box date__box">
+            <div id="day2__task" class="day__task"></div>
+            <div id="day2__states" class="day__states">
+              <p class="day__number">2</p>
+              <i
+                id="day2_btn"
+                onClick="return_id(this.id)"
+                class="fas add__button fa-plus-circle fa-sm"
+              ></i>
+            </div>
+            <div id="box__content2" class="box__content">
+              <div class="popup">
+                <p>Saturday 2 November 2023</p>
+              </div>
+            </div>
+          </div>
+
+          <div id="day3__box" class="day__box date__box">
+            <div id="day3__task" class="day__task"></div>
+            <div id="day3__states" class="day__states">
+              <p class="day__number">3</p>
+              <i
+                id="day3_btn"
+                onClick="return_id(this.id)"
+                class="fas add__button fa-plus-circle fa-sm"
+              ></i>
+            </div>
+            <div id="box__content3" class="box__content">
+              <div class="popup">
+                <p>Sunday 3 November  2023</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="display__flex">
+          <div class="week__number__div">
+            <p>01</p>
+          </div>
+          <div id="day4__box" class="day__box date__box">
+            <div id="day4__task" class="day__task"></div>
+            <div id="day4__states" class="day__states">
+              <p class="day__number">4</p>
+              <i
+                id="day4_btn"
+                onClick="return_id(this.id)"
+                class="fas add__button fa-plus-circle fa-sm"
+              ></i>
+            </div>
+            <div id="box__content4" class="box__content">
+              <div class="popup">
+                <p>Monday 4 November 2023</p>
+              </div>
+            </div>
+          </div>
+          <div id="day5__box" class="day__box date__box">
+            <div id="day5__task" class="day__task"></div>
+            <div id="day5__states" class="day__states">
+              <p class="day__number">5</p>
+              <i
+                id="day5_btn"
+                onClick="return_id(this.id)"
+                class="fas add__button fa-plus-circle fa-sm"
+              ></i>
+            </div>
+            <div id="box__content5" class="box__content">
+              <div class="popup">
+                <p>Tuesday 5 November 2023</p>
+              </div>
+            </div>
+          </div>
+          <div id="day6__box" class="day__box date__box">
+            <div id="day6__task" class="day__task"></div>
+            <div id="day6__states" class="day__states">
+              <p class="day__number">6</p>
+              <i
+                id="day6_btn"
+                onClick="return_id(this.id)"
+                class="fas add__button fa-plus-circle fa-sm"
+              ></i>
+            </div>
+            <div id="box__content6" class="box__content">
+              <div class="popup">
+                <p>Wednesday 6 November 2023</p>
+              </div>
+            </div>
+          </div>
+          <div id="day7__box" class="day__box date__box">
+            <div id="day7__task" class="day__task"></div>
+            <div id="day7__states" class="day__states">
+              <p class="day__number">7</p>
+              <i
+                id="day7_btn"
+                onClick="return_id(this.id)"
+                class="fas add__button fa-plus-circle fa-sm"
+              ></i>
+            </div>
+            <div id="box__content7" class="box__content">
+              <div class="popup">
+                <p>Thursday 7 November 2023</p>
+              </div>
+            </div>
+          </div>
+          <div id="day8__box" class="day__box date__box">
+            <div id="day8__task" class="day__task"></div>
+            <div id="day8__states" class="day__states">
+              <p class="day__number">8</p>
+              <i
+                id="day8_btn"
+                onClick="return_id(this.id)"
+                class="fas add__button fa-plus-circle fa-sm"
+              ></i>
+            </div>
+            <div id="box__content8" class="box__content">
+              <div class="popup">
+                <p>Friday 8 November 2023</p>
+              </div>
+            </div>
+          </div>
+          <div id="day9__box" class="day__box date__box">
+            <div id="day9__task" class="day__task"></div>
+            <div id="day9__states" class="day__states">
+              <p class="day__number">9</p>
+              <i
+                id="day9_btn"
+                onClick="return_id(this.id)"
+                class="fas add__button fa-plus-circle fa-sm"
+              ></i>
+            </div>
+            <div id="box__content9" class="box__content">
+              <div class="popup">
+                <p>Saturday 9 November 2023</p>
+              </div>
+            </div>
+          </div>
+          <div id="day10__box" class="day__box date__box">
+            <div id="day10__task" class="day__task"></div>
+            <div id="day10__states" class="day__states">
+              <p class="day__number">10</p>
+              <i
+                id="day10_btn"
+                onClick="return_id(this.id)"
+                class="fas add__button fa-plus-circle fa-sm"
+              ></i>
+            </div>
+            <div id="box__content10" class="box__content">
+              <div class="popup">
+                <p>Sunday 10 November 2023</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="display__flex">
+          <div class="week__number__div">
+            <p>02</p>
+          </div>
+          <div id="day11__box" class="day__box date__box">
+            <div id="day11__task" class="day__task"></div>
+            <div id="day11__states" class="day__states">
+              <p class="day__number">11</p>
+              <i
+                id="day11_btn"
+                onClick="return_id(this.id)"
+                class="fas add__button fa-plus-circle fa-sm"
+              ></i>
+            </div>
+            <div id="box__content11" class="box__content">
+              <div class="popup">
+                <p>Monday 11 November 2023</p>
+              </div>
+            </div>
+          </div>
+          <div id="day12__box" class="day__box date__box">
+            <div id="day12__task" class="day__task"></div>
+            <div id="day12__states" class="day__states">
+              <p class="day__number">12</p>
+              <i
+                id="day12_btn"
+                onClick="return_id(this.id)"
+                class="fas add__button fa-plus-circle fa-sm"
+              ></i>
+            </div>
+            <div id="box__content12" class="box__content">
+              <div class="popup">
+                <p>Tuesday 12 November 2023</p>
+              </div>
+            </div>
+          </div>
+          <div id="day13__box" class="day__box date__box">
+            <div id="day13__task" class="day__task"></div>
+            <div id="day13__states" class="day__states">
+              <p class="day__number">13</p>
+              <i
+                id="day13_btn"
+                onClick="return_id(this.id)"
+                class="fas add__button fa-plus-circle fa-sm"
+              ></i>
+            </div>
+            <div id="box__content13" class="box__content">
+              <div class="popup">
+                <p>Wednesday 13 November 2023</p>
+              </div>
+            </div>
+          </div>
+          <div id="day14__box" class="day__box date__box">
+            <div id="day14__task" class="day__task"></div>
+            <div id="day14__states" class="day__states">
+              <p class="day__number">14</p>
+              <i
+                id="day14_btn"
+                onClick="return_id(this.id)"
+                class="fas add__button fa-plus-circle fa-sm"
+              ></i>
+            </div>
+            <div id="box__content14" class="box__content">
+              <div class="popup">
+                <p>Thursday 14 November 2023</p>
+              </div>
+            </div>
+          </div>
+          <div id="day15__box" class="day__box date__box">
+            <div id="day15__task" class="day__task"></div>
+            <div id="day15__states" class="day__states">
+              <p class="day__number">15</p>
+              <i
+                id="day15_btn"
+                onClick="return_id(this.id)"
+                class="fas add__button fa-plus-circle fa-sm"
+              ></i>
+            </div>
+            <div id="box__content15" class="box__content">
+              <div class="popup">
+                <p>Friday 15 November 2023</p>
+              </div>
+            </div>
+          </div>
+          <div id="day16__box" class="day__box date__box">
+            <div id="day16__task" class="day__task"></div>
+            <div id="day16__states" class="day__states">
+              <p class="day__number">16</p>
+              <i
+                id="day16_btn"
+                onClick="return_id(this.id)"
+                class="fas add__button fa-plus-circle fa-sm"
+              ></i>
+            </div>
+            <div id="box__content16" class="box__content">
+              <div class="popup">
+                <p>Saturday 16 November 2023</p>
+              </div>
+            </div>
+          </div>
+          <div id="day17__box" class="day__box date__box">
+            <div id="day17__task" class="day__task"></div>
+            <div id="day17__states" class="day__states">
+              <p class="day__number">17</p>
+              <i
+                id="day17_btn"
+                onClick="return_id(this.id)"
+                class="fas add__button fa-plus-circle fa-sm"
+              ></i>
+            </div>
+            <div id="box__content17" class="box__content">
+              <div class="popup">
+                <p>Sunday 17 November 2023</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="display__flex">
+          <div class="week__number__div">
+            <p>03</p>
+          </div>
+          <div id="day18__box" class="day__box date__box">
+            <div id="day18__task" class="day__task"></div>
+            <div id="day18__states" class="day__states">
+              <p class="day__number">18</p>
+              <i
+                id="day18_btn"
+                onClick="return_id(this.id)"
+                class="fas add__button fa-plus-circle fa-sm"
+              ></i>
+            </div>
+            <div id="box__content18" class="box__content">
+              <div class="popup">
+                <p>Monday 18 November 2023</p>
+              </div>
+            </div>
+          </div>
+          <div id="day19__box" class="day__box date__box">
+            <div id="day19__task" class="day__task"></div>
+            <div id="day19__states" class="day__states">
+              <p class="day__number">19</p>
+              <i
+                id="day19_btn"
+                onClick="return_id(this.id)"
+                class="fas add__button fa-plus-circle fa-sm"
+              ></i>
+            </div>
+            <div id="box__content19" class="box__content">
+              <div class="popup">
+                <p>Tuesday 19 November 2023</p>
+              </div>
+            </div>
+          </div>
+          <div id="day20__box" class="day__box date__box">
+            <div id="day20__task" class="day__task"></div>
+            <div id="day20__states" class="day__states">
+              <p class="day__number">20</p>
+              <i
+                id="day20_btn"
+                onClick="return_id(this.id)"
+                class="fas add__button fa-plus-circle fa-sm"
+              ></i>
+            </div>
+            <div id="box__content20" class="box__content">
+              <div class="popup">
+                <p>Wednesday 20 November 2023</p>
+              </div>
+            </div>
+          </div>
+          <div id="day21__box" class="day__box date__box">
+            <div id="day21__task" class="day__task"></div>
+            <div id="day21__states" class="day__states">
+              <p class="day__number">21</p>
+              <i
+                id="day21_btn"
+                onClick="return_id(this.id)"
+                class="fas add__button fa-plus-circle fa-sm"
+              ></i>
+            </div>
+            <div id="box__content21" class="box__content">
+              <div class="popup">
+                <p>Thursday 21 November 2023</p>
+              </div>
+            </div>
+          </div>
+          <div id="day22__box" class="day__box date__box">
+            <div id="day22__task" class="day__task"></div>
+            <div id="day22__states" class="day__states">
+              <p class="day__number">22</p>
+              <i
+                id="day22_btn"
+                onClick="return_id(this.id)"
+                class="fas add__button fa-plus-circle fa-sm"
+              ></i>
+            </div>
+            <div id="box__content22" class="box__content">
+              <div class="popup">
+                <p>Friday 22 November 2023</p>
+              </div>
+            </div>
+          </div>
+          <div id="day23__box" class="day__box date__box">
+            <div id="day23__task" class="day__task"></div>
+            <div id="day23__states" class="day__states">
+              <p class="day__number">23</p>
+              <i
+                id="day23_btn"
+                onClick="return_id(this.id)"
+                class="fas add__button fa-plus-circle fa-sm"
+              ></i>
+            </div>
+            <div id="box__content23" class="box__content">
+              <div class="popup">
+                <p>Saturday 23 November 2023</p>
+              </div>
+            </div>
+          </div>
+          <div id="day24__box" class="day__box date__box">
+            <div id="day24__task" class="day__task"></div>
+            <div id="day24__states" class="day__states">
+              <p class="day__number">24</p>
+              <i
+                id="day24_btn"
+                onClick="return_id(this.id)"
+                class="fas add__button fa-plus-circle fa-sm"
+              ></i>
+            </div>
+            <div id="box__content24" class="box__content">
+              <div class="popup">
+                <p>Sunday 24 November 2023</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="display__flex">
+          <div class="week__number__div">
+            <p>04</p>
+          </div>
+          <div id="day25__box" class="day__box date__box">
+            <div id="day25__task" class="day__task"></div>
+            <div id="day25__states" class="day__states">
+              <p class="day__number">25</p>
+              <i
+                id="day25_btn"
+                onClick="return_id(this.id)"
+                class="fas add__button fa-plus-circle fa-sm"
+              ></i>
+            </div>
+            <div id="box__content25" class="box__content">
+              <div class="popup">
+                <p>Monday 25 November 2023</p>
+              </div>
+            </div>
+          </div>
+          <div id="day26__box" class="day__box date__box">
+            <div id="day26__task" class="day__task"></div>
+            <div id="day26__states" class="day__states">
+              <p class="day__number">26</p>
+              <i
+                id="day26_btn"
+                onClick="return_id(this.id)"
+                class="fas add__button fa-plus-circle fa-sm"
+              ></i>
+            </div>
+            <div id="box__content26" class="box__content">
+              <div class="popup">
+                <p>Tuesday 26 November 2023</p>
+              </div>
+            </div>
+          </div>
+          <div id="day27__box" class="day__box date__box">
+            <div id="day27__task" class="day__task"></div>
+            <div id="day27__states" class="day__states">
+              <p class="day__number">27</p>
+              <i
+                id="day27_btn"
+                onClick="return_id(this.id)"
+                class="fas add__button fa-plus-circle fa-sm"
+              ></i>
+            </div>
+            <div id="box__content27" class="box__content">
+              <div class="popup">
+                <p>Wednesday 27 November 2023</p>
+              </div>
+            </div>
+          </div>
+          <div id="day28__box" class="day__box date__box">
+            <div id="day28__task" class="day__task"></div>
+            <div id="day28__states" class="day__states">
+              <p class="day__number">28</p>
+              <i
+                id="day28_btn"
+                onClick="return_id(this.id)"
+                class="fas add__button fa-plus-circle fa-sm"
+              ></i>
+            </div>
+            <div id="box__content28" class="box__content">
+              <div class="popup">
+                <p>Thursday 28 November 2023</p>
+              </div>
+            </div>
+          </div>
+          <div id="day29__box" class="day__box date__box">
+            <div id="day29__task" class="day__task"></div>
+            <div id="day29__states" class="day__states">
+              <p class="day__number">29</p>
+              <i
+                id="day29_btn"
+                onClick="return_id(this.id)"
+                class="fas add__button fa-plus-circle fa-sm"
+              ></i>
+            </div>
+            <div id="box__content29" class="box__content">
+              <div class="popup">
+                <p>Friday 29 November 2023</p>
+              </div>
+            </div>
+          </div>
+          <div id="day30__box" class="day__box date__box">
+            <div id="day30__task" class="day__task"></div>
+            <div id="day30__states" class="day__states">
+              <p class="day__number">30</p>
+              <i
+                id="day30_btn"
+                onClick="return_id(this.id)"
+                class="fas add__button fa-plus-circle fa-sm"
+              ></i>
+            </div>
+            <div id="box__content30" class="box__content">
+              <div class="popup">
+                <p>Saturday 30 November 2023</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="calendar__option__bar">
+        <div class="optionbar__left__div">
+          <i class="fas arrow__button fa-caret-left"></i>
+          <a>December</a>
+        </div>
+        <div class="optionbar__center__div">
+          <p>Select another month</p>
+          <select>
+            <option value="2023">2023</option>
+            <option value="2022">2022</option>
+            <option value="2021">2021</option>
+            <option value="2020">2020</option>
+            <option value="2019">2019</option>
+            <option value="2018">2018</option>
+            <option value="2017">2017</option>
+            <option value="2016">2016</option>
+            <option value="2015">2015</option>
+            <option value="2014">2014</option>
+            <option value="2013">2013</option>
+            <option value="2012">2012</option>
+            <option value="2011">2011</option>
+            <option value="2010">2010</option>
+            <option value="2009">2009</option>
+            <option value="2008">2008</option>
+            <option value="2007">2007</option>
+            <option value="2006">2006</option>
+            <option value="2005">2005</option>
+            <option value="2004">2004</option>
+            <option value="2003">2003</option>
+            <option value="2002">2002</option>
+            <option value="2001">2001</option>
+            <option value="2000">2000</option>
+          </select>
+          <select>
+            <option value="January">January</option>
+            <option value="February">February</option>
+            <option value="March">March</option>
+            <option value="April">April</option>
+            <option value="May">May</option>
+            <option value="June">June</option>
+            <option value="July">July</option>
+            <option value="August">August</option>
+            <option value="September">September</option>
+            <option value="October">October</option>
+            <option value="November">November</option>
+            <option value="December">December</option>
+          </select>
+          <div>
+            <p class="show__btn">SHOW</p>
+          </div>
+        </div>
+        <div class="optionbar__right__div">
+          <i class="fas arrow__button fa-caret-right"></i>
+          <a>February</a>
+        </div>
+      </div>
+      <div class="calendar__bottom">
+        <p>Show current month</p>
+        <div class="vertical__line"></div>
+        <p>Search your diary</p>
+        <div class="vertical__line"></div>
+        <p>Show Year</p>
+      </div>
+    </div>
+    <div class="module__div">
+      <div class="month__states">
+        <div class="month__states__div1">
+          <p>Modules</p>
+        </div>
+        <div class="month__states__div3">
+          <button>ADD MODULE</button>
+        </div>
+      </div>
+      <div class="card__div">
+        <div class="card__div__left">
+          <div class="card">
+            <div class="card__topbar">
+              <div class="topbar__left">
+                <p>Weight</p>
+              </div>
+              <div class="topbar__right">
+                <i class="fas close fa-times"></i>
+                <i class="fas up fa-caret-up"></i>
+              </div>
+            </div>
+            <div class="card__bottom display__flex">
+              <div class="card__bottom1">
+                <p><b>Most recent weight:</b></p>
+                <p class="states__kg">60.0 kg</p>
+              </div>
+              <div class="vertical__line"></div>
+              <div class="card__bottom2">
+                <p><b>Most recent change:</b></p>
+                <p>Unknown</p>
+              </div>
+              <div class="vertical__line"></div>
+              <div class="card__bottom3">
+                <p><b>Total change:</b></p>
+                <p>Unknown</p>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card__topbar">
+              <div class="topbar__left">
+                <p>Forum Topics</p>
+              </div>
+              <div class="topbar__right">
+                <i class="fas close fa-times"></i>
+                <i class="fas up fa-caret-up"></i>
+              </div>
+            </div>
+            <div class="card__bottom">
+              <p>Latest forum posts</p>
+              <div class="horizontal__line"></div>
+              <p class="links">Go to forum startpage</p>
+            </div>
+          </div>
+        </div>
+        <div class="card__div__right">
+          <div class="card">
+            <div class="card__topbar">
+              <div class="topbar__left">
+                <p>Latest Blog Post</p>
+              </div>
+              <div class="topbar__right">
+                <i class="fas close fa-times"></i>
+                <i class="fas up fa-caret-up"></i>
+              </div>
+            </div>
+            <div class="card__bottom post__div">
+              <p>These are the five last blog entries from Shapelink users.</p>
+              <div class="horizontal__line"></div>
+              <div class="display__flex">
+                <div class="dp__icon">
+                  <img
+                    src="https://media.creativemornings.com/uploads/user/avatar/58109/AmandaNienaberProfile-square.jpg"
+                    alt=""
+                  />
+                </div>
+                <div>
+                  <p class="post__title">
+                    Why do we suck at building healthy habits?
+                  </p>
+                  <div class="display__flex">
+                    <p>Written by</p>
+                    <p class="links">Emily Franklin</p>
+                    <p>19 January 2020 5:09</p>
+                  </div>
+                </div>
+              </div>
+              <div class="horizontal__line"></div>
+              <div class="display__flex">
+                <div class="dp__icon">
+                  <img
+                    src="https://sunrift.com/wp-content/uploads/2014/12/Blake-profile-photo-square.jpg"
+                    alt=""
+                  />
+                </div>
+                <div>
+                  <p class="post__title">
+                    How to build healthy habits (The three parts)
+                  </p>
+                  <div class="display__flex">
+                    <p>Written by</p>
+                    <p class="links">Patrick Rios</p>
+                    <p>22 March 2020 11:47</p>
+                  </div>
+                </div>
+              </div>
+              <div class="horizontal__line"></div>
+              <div class="display__flex">
+                <div class="dp__icon">
+                  <img
+                    src="https://www.stepstherapy.com.au/wp-content/uploads/2020/05/Natalie-square-profile-picture-1024x1024.jpg"
+                    alt=""
+                  />
+                </div>
+                <div>
+                  <p class="post__title">Pick your habit and GO (Next steps)</p>
+                  <div class="display__flex">
+                    <p>Written by</p>
+                    <p class="links">Ashley Elliott</p>
+                    <p>17 January 2021 3:01</p>
+                  </div>
+                </div>
+              </div>
+              <div class="horizontal__line"></div>
+              <div class="display__flex">
+                <div class="dp__icon">
+                  <img
+                    src="http://kara.allthingsd.com/files/2011/04/profilepic.jpg"
+                    alt=""
+                  />
+                </div>
+                <div>
+                  <p class="post__title">
+                    The secret to fulfilling your resolution (Do less)
+                  </p>
+                  <div class="display__flex">
+                    <p>Written by</p>
+                    <p class="links">Diana Whiten</p>
+                    <p>28 April 2020 2:17</p>
+                  </div>
+                </div>
+              </div>
+              <div class="horizontal__line"></div>
+              <div class="display__flex">
+                <div class="dp__icon">
+                  <img
+                    src="https://i0.wp.com/movile.blog/wp-content/uploads/2019/05/SMall-profile-square.png?ssl=1"
+                    alt=""
+                  />
+                </div>
+                <div>
+                  <p class="post__title">
+                    5 hacks for effortless healthy habit building
+                  </p>
+                  <div class="display__flex">
+                    <p>Written by</p>
+                    <p class="links">Jason George</p>
+                    <p>23 February 2020 10:13</p>
+                  </div>
+                </div>
+              </div>
+              <div class="horizontal__line"></div>
+              <p class="links">Go to the blogs</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+   
+    <div id="shadow1"></div>
+    <div id="popup__window" class="hide">
+      <button id="popup__close1" class="popup__close">X</button>
+      <div>
+        <div class="popup__titlebar">
+          <p class="popup__titletext1">Add to diary</p>
+          <p class="popup__titletext2">Friday 1 January 2023</p>
+          <p class="popup__titletext3">Change date</p>
+        </div>
+        <div class="container__div">
+          <div class="popup__options__left">
+            <div class="popup__options__left__div1">
+              <p>Training</p>
+            </div>
+            <div class="popup__options__left__div2">
+              <div class="option__div" id="weight">
+                <div>
+                  <img
+                    class="icon_red"
+                    src="https://www.shapelink.com/images/diary_icons/55.png"
+                  />
+                </div>
+                <div>
+                  <p class="option__title">Weight</p>
+                  <p class="option__para">
+                    For example exercises in the gym push ups at home or
+                    crossfit
+                  </p>
+                </div>
+              </div>
+              <div class="option__div" id="cardio">
+                <div>
+                  <img
+                    class="icon_blue"
+                    src="https://www.shapelink.com/images/diary_icons/2.png"
+                  />
+                </div>
+                <div>
+                  <p class="option__title">Cardio</p>
+                  <p class="option__para">
+                    For example running swimming or nordic skiing
+                  </p>
+                </div>
+              </div>
+              <div class="option__div" id="cardio__gym">
+                <div>
+                  <img
+                    class="icon_green"
+                    src="https://www.shapelink.com/images/diary_icons/29.png"
+                  />
+                </div>
+                <div>
+                  <p class="option__title">Cardio Gym</p>
+                  <p class="option__para">
+                    For example treadmill, crosstrainer or tair climber
+                  </p>
+                </div>
+              </div>
+              <div class="option__div" id="group_training">
+                <div>
+                  <img
+                    class="icon_purple"
+                    src="https://www.shapelink.com/images/diary_icons/4.png"
+                  />
+                </div>
+                <div>
+                  <p class="option__title">Group Training</p>
+                  <p class="option__para">
+                    For example aerobics, spinn or zumba
+                  </p>
+                </div>
+              </div>
+              <div class="option__div" id="sports">
+                <div>
+                  <img
+                    class="icon_orange"
+                    src="https://www.shapelink.com/images/diary_icons/22.png"
+                  />
+                </div>
+                <div>
+                  <p class="option__title">Sports</p>
+                  <p class="option__para">
+                    For example tennis, soccer or ice hockey
+                  </p>
+                </div>
+              </div>
+              <div class="option__div" id="import__raining">
+                <div>
+                  <img
+                    class="icon_grey"
+                    src="https://www.shapelink.com/images/diary_icons/155.png"
+                  />
+                </div>
+                <div>
+                  <p class="option__title">Import Training</p>
+                  <p class="option__para">
+                    Important training from Garmin units, Runkeeper, Nikeplus
+                    etc
+                  </p>
+                </div>
+              </div>
+              <div class="option__div" id="templates">
+                <div>
+                  <img
+                    class="icon_grey"
+                    src="https://www.shapelink.com/images/diary_icons/25.png"
+                  />
+                </div>
+                <div>
+                  <p class="option__title">Templates</p>
+                  <p class="option__para">
+                    Easily add your premade workout templates
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="popup__options__right">
+            <div class="popup__options__left__div1">
+              <p>Other notations</p>
+            </div>
+            <div class="popup__options__left__div2">
+              <div class="option__div">
+                <div>
+                  <img
+                    class="icon_grey"
+                    src="https://www.shapelink.com/images/diary_icons/30.png"
+                  />
+                </div>
+                <div>
+                  <p class="option__title">Nutrition</p>
+                  <p class="option__para">
+                    Keep track of your nutrition intake
+                  </p>
+                </div>
+              </div>
+              <div class="option__div">
+                <div>
+                  <img
+                    class="icon_grey"
+                    src="https://www.shapelink.com/images/diary_icons/26.png"
+                  />
+                </div>
+                <div>
+                  <p class="option__title">Weight</p>
+                  <p class="option__para">Keep track of your weight</p>
+                </div>
+              </div>
+              <div class="option__div">
+                <div>
+                  <img
+                    class="icon_grey"
+                    src="https://www.shapelink.com/images/diary_icons/139.png"
+                  />
+                </div>
+                <div>
+                  <p class="option__title">Steps</p>
+                  <p class="option__para">
+                    Register your daily amount of steps
+                  </p>
+                </div>
+              </div>
+              <div class="option__div">
+                <div>
+                  <img
+                    class="icon_grey"
+                    src="https://www.shapelink.com/images/diary_icons/25.png"
+                  />
+                </div>
+                <div>
+                  <p class="option__title">Text and photo-notation</p>
+                  <p class="option__para">
+                    Comments this day and upload images
+                  </p>
+                </div>
+              </div>
+              <div class="option__div">
+                <div>
+                  <img
+                    class="icon_grey"
+                    src="https://www.shapelink.com/images/diary_icons/test.png"
+                  />
+                </div>
+                <div>
+                  <p class="option__title">Test</p>
+                  <p class="option__para">Physical test values for followup</p>
+                </div>
+              </div>
+              <div class="option__div">
+                <div>
+                  <img
+                    class="icon_grey"
+                    src="https://www.shapelink.com/images/diary_icons/80.png"
+                  />
+                </div>
+                <div>
+                  <p class="option__title">Measurements</p>
+                  <p class="option__para">
+                    For example biceps, waist or thighs
+                  </p>
+                </div>
+              </div>
+              <div class="option__div">
+                <div>
+                  <img
+                    class="icon_grey"
+                    src="https://www.shapelink.com/images/diary_icons/85.png"
+                  />
+                </div>
+                <div>
+                  <p class="option__title">Pulse</p>
+                  <p class="option__para">Keep track of your resting pulse</p>
+                </div>
+              </div>
+              <div class="option__div">
+                <div>
+                  <img
+                    class="icon_grey"
+                    src="https://www.shapelink.com/images/diary_icons/187.png"
+                  />
+                </div>
+                <div>
+                  <p class="option__title">Injuries</p>
+                  <p class="option__para">
+                    Keep track of the days when you can't exercise
+                  </p>
+                </div>
+              </div>
+              <div class="option__div">
+                <div>
+                  <img
+                    class="icon_grey"
+                    src="https://www.shapelink.com/images/diary_icons/188.png"
+                  />
+                </div>
+                <div>
+                  <p class="option__title">Daily form</p>
+                  <p class="option__para">
+                    Describe your dail form and follow your trend
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hide" id="popup__weight">
+        <div class="popup__titlebar">
+          <button id="popup__close2" class="popup__close">X</button>
+          <div class="weight__titlebar">
+            <p class="popup__titletext1">Add to diary</p>
+            <p class="popup__titletext2">Friday 1 January 2023</p>
+            <p class="popup__titletext3">Change date</p>
+          </div>
+          <div class="back__btn__div">
+            <button onclick="back(this);" id="back__btn" class="back__btn">
+              GO BACK
+            </button>
+            <p class="popup__titletext2">Go back</p>
+          </div>
+        </div>
+        <div class="weight__bg__div">
+          <div>
+            <div class="weight__div1">
+              <p class="weight__title">Strength Training</p>
+            </div>
+            <div class="input__bg__div">
+              <div class="input__bg__left">
+                <div class="margin__div">
+                  <p class="header">Workout title</p>
+                  <input type="text" id="title" placeholder="Enter Title" />
+                </div>
+                <div class="margin__div display__flex">
+                  <div class="margin__sub__div">
+                    <p class="header">Time</p>
+                    <input type="number" id="time" placeholder="Enter Time" />
+                  </div>
+                  <div class="margin__sub__div">
+                    <p class="header">Selected icon</p>
+                    <div>
+                      <img
+                        class="icon_red"
+                        src="https://www.shapelink.com/images/diary_icons/55.png"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="margin__div">
+                  <p class="header">Warm up</p>
+                  <input type="text" id="warmup" placeholder="Enter Warmup" />
+                </div>
+              </div>
+              <div class="input__bg__left">
+                <p class="header">Comment</p>
+                <textarea
+                  type="text"
+                  id="comment"
+                  placeholder="Enter Comment"
+                ></textarea>
+              </div>
+            </div>
+            <div class="save__bg__div">
+              <div>
+                <button id="save__btn">SAVE</button>
+              </div>
+              <div></div>
+              <div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="show_calendar.js"></script>
+  </body>
+</html>

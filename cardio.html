@@ -1,0 +1,818 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cardio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="cardio.css"/>
+</head>
+<body>
+    <div class="navbar"> 
+        <div class="navbar__top">
+            <div class="left__side">
+                <img class="navbar__logo" src="https://www.shapelink.com/images/logo.png">
+                <div class="link__div  current__page__div">
+                    <a class="top__links  current__page__link blck" style="color:gray;" id="exercise_log" href="https://example.com">Exercise Log</a>
+                </div>
+                <div class="link__div">
+                    <a class="top__links blck" style="color:gray;" href="https://example.com">Results</a>
+                </div>
+                <div class="link__div">
+                    <a class="top__links blck" style="color:gray;" href="https://example.com">Challenges</a>
+                </div>
+                <div class="link__div">
+                    <a class="top__links blck" style="color:gray;" href="https://example.com">Friends</a>
+                </div>
+                <div class="link__div">
+                    <a class="top__links blck" style="color:gray;" href="https://example.com">Groups</a>
+                </div>
+            </div>
+            <div class="right__side">
+            
+            </div>
+        </div>
+        <div class="navbar__bottom">
+            <div class="link__div">
+                <a class="bottom__link " href="https://example.com">Show Calendar</a>
+            </div>
+            <div class="link__div">
+                <a class="bottom__link current__subpage__link" href="Mythings.html">My Things</a>
+            </div>
+            <div class="link__div">
+                <a class="bottom__link" href="https://example.com">Routines</a>
+            </div>
+            <div class="link__div">
+                <a class="bottom__link" href="https://example.com">Tracks</a>
+            </div>
+            <div class="link__div">
+                <a class="bottom__link" href="https://example.com">Equipment</a>
+            </div>
+            <div class="link__div">
+                <a class="bottom__link" href="https://example.com">Import</a>
+            </div>
+        </div>
+    </div>
+    <div id="outerbox1">
+        <!-- 1st div box -->
+        <div id="sidebar1">
+            <div class="sidebar_inner">
+                <table>
+                    <tr class="navy">
+                        <th>CATEGORIES</th>
+                    </tr>
+                    <tr>
+                       <td><a href="cardio.html">Cardio<i class="fa fa-caret-left" id="c1"></i></a></td> 
+                    </tr>
+                    <tr>
+                        <td>Cardio - Gym<i class="fa fa-caret-left" id="c2"></i></td>
+                    </tr>
+                    <tr>
+                        <td>Gym Class<i class="fa fa-caret-left" id="c3"></i></td>
+                    </tr>
+                    <tr>
+                        <td>Weight Lifting<i class="fa fa-caret-left" id="c4"></i></td>
+                    </tr>
+                    <tr>
+                        <td>Sports<i class="fa fa-caret-left" id="c5"></i></td>
+                    </tr>
+                    
+                </table>
+             
+            </div>
+            <br/>
+            <div class="sidebar_inner">
+                
+                    <table>
+                        <tr class="navy">
+                            <th>OTHER TRAINING</th>
+                        </tr>
+                        <tr>
+                           <td>My Templates<i class="fa fa-caret-left" ></i></td> 
+                        </tr>
+                        <tr>
+                            <td>My Routines<i class="fa fa-caret-left" ></i></td>
+                        </tr>
+                        <tr>
+                            <td>Equipment<i class="fa fa-caret-left" ></i></td>
+                        </tr>
+                        <tr>
+                            <td>Heart rate Zones<i class="fa fa-caret-left" ></i></td>
+                        </tr>
+                    </table>
+                
+            </div>
+            <br/>
+            <div class="sidebar_inner">
+                <table>
+                    <tr class="navy">
+                        <th>NUTRITION</th>
+                    </tr>
+                    <tr>
+                       <td><a href="Food.html">Food<i class="fa fa-caret-left" ></i></a></td> 
+                    </tr>
+                    <tr>
+                        <td><a href="Meals.html">Meals<i class="fa fa-caret-left" ></i></a></td> 
+                     </tr>
+                </table>
+            </div>
+        </div>
+        <!-- 2nd div box -->
+        <div id="contentbox">
+           <h1>Cardio</h1>
+           <div id="my2">Add the activities and tracks for Cardio workout which you want to use in your calendar. Use the forms below to add tracks and activites. To edit a track, click the pencil.
+           <br/>
+           <br/>
+           <br/>
+            <button id="contentbox_btn" >CREATE NEW ACTIVITY</button>
+            <div id="myModal" class="modal">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <div id="inside_close">
+                        <div id="inside_close1">
+                            <div id="inside_close2">
+                                <h2>Create new activity</h2>
+                                <form>
+                                    <input type="hidden" name="id" id="id" value/>
+                                    <table cellspacing="0" cellpadding="0">
+                                    <tbody>
+                                       <tr>
+                                           <td style="padding-right:20px;" valign="top">
+                                            <b>Activity name</b>
+                                            <br/>
+                                            <input type="text" name="activity_name" id="activity_name" value class="fancy_input" style="width:184px;"/>
+                                        </td>
+                                           <td valign="top">
+                                               <b>Corresponding calorie burn</b>
+                                               <br/>
+                                               <select class="select fancy_input">
+                                                   <option value="1">Aerobics, low impact</option>
+                                                   <option value="2">Aerobics, high impact</option>
+                                                   <option value="3">Aerobics , Step low impact</option>
+                                                   <option value="4">Aerobics , Step high impact</option>
+                                                   <option value="5">Aerobics, water</option>
+                                                   <option value="6">Circle training</option>
+                                                   <option value="7">Training cycle, slow</option>
+                                                   <option value="8">Training cycle, fast</option>
+                                                   <option value="9">Rower, slow</option>
+                                                   <option value="10">Rower, fast</option>
+                                               </select>
+                                           </td>
+                                       </tr> 
+                                    </tbody>
+                                    </table>
+                                    <div id="after_table">
+                                      <table id="after_table_child" cell-spacing="0" cell-padding="0">
+                                       <tbody>
+                                           <tr>
+                                               <td style="width:32px">
+                                                   <div style="margin:0px" class="diary_icon icon_cardio">
+                                                    <img id="activityIcon" src="https://www.shapelink.com/images/diary_icons/161.png"/>
+                                                </div>
+                                                   <input type="hidden" name="activity_icon_id" id="activity_icon_id" value="179"/>
+                                               </td>
+                                               <td>
+                                                   <b>Select a standard icon</b>
+                                               </td>
+                                           </tr>
+                                       </tbody>
+                                      </table>
+                                      <a class="diary_icon icon_cardio" href="#" onclick="set_activity_icon(170,'170.png')">
+                                        <img id="170" src="https://www.shapelink.com/images/diary_icons/170.png"/>
+                                        
+                                    </a>
+                                    <a class="diary_icon icon_cardio" href="#" onclick="set_activity_icon(171,'171.png');return false;">
+                                        <img id="171" src="https://www.shapelink.com/images/diary_icons/171.png"/>
+                                        
+                                    </a>
+                                    <a class="diary_icon icon_cardio" href="#" onclick="set_activity_icon(172,'172.png');return false;">
+                                        <img id="172" src="https://www.shapelink.com/images/diary_icons/172.png"/>
+                                        
+                                    </a>
+                                    <a class="diary_icon icon_cardio" href="#" onclick="set_activity_icon(173,'173.png');return false;">
+                                        <img id="173" src="https://www.shapelink.com/images/diary_icons/173.png"/>
+                                        
+                                    </a>
+                                    <a class="diary_icon icon_cardio" href="#" onclick="set_activity_icon(174,'174.png');return false;">
+                                        <img id="174" src="https://www.shapelink.com/images/diary_icons/174.png"/>
+                                        
+                                    </a>
+                                    <a class="diary_icon icon_cardio" href="#" onclick="set_activity_icon(175,'175.png');return false;">
+                                        <img id="175" src="https://www.shapelink.com/images/diary_icons/175.png"/>
+                                        
+                                    </a>
+                                    <a class="diary_icon icon_cardio" href="#" onclick="set_activity_icon(176,'176.png');return false;">
+                                        <img id="176" src="https://www.shapelink.com/images/diary_icons/176.png"/>
+                                        
+                                    </a>
+                                    <a class="diary_icon icon_cardio" href="#" onclick="set_activity_icon(177,'177.png');return false;">
+                                        <img id="177" src="https://www.shapelink.com/images/diary_icons/177.png"/>
+                                        
+                                    </a>
+                                    <a class="diary_icon icon_cardio" href="#" onclick="set_activity_icon(178,'178.png');return false;">
+                                        <img id="178" src="https://www.shapelink.com/images/diary_icons/178.png"/>
+                                        
+                                    </a>
+                                    <a class="diary_icon icon_cardio" href="#" onclick="set_activity_icon(179,'179.png')">
+                                        <img id="179" src="https://www.shapelink.com/images/diary_icons/179.png"/>
+                                        
+                                    </a>
+                                    </div>
+                                    <input type="button" id="save_activity" value="Save activity" onclick="save()"/>
+                                    <input type="button" id="Cancel" value="Cancel" onclick="cancel()"/>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="myModal1" class="modal1">
+                <div class="modal-content1">
+                    <span class="close1">&times;</span>
+                    <div id="inside_close_1">
+                        <div id="inside_close1_1">
+                            <div id="inside_close2_2">
+                                <h2>Update activity</h2>
+                                <form>
+                                    <input type="hidden" name="id1" id="id1" value/>
+                                    <!-- <table cellspacing="0" cellpadding="0">
+                                    <tbody>
+                                       <tr>
+                                           <td style="padding-right:20px;" valign="top">
+                                            <b>Activity name</b>
+                                            <br/>
+                                            <input type="text" name="activity_name1" id="activity_name11" value class="fancy_input" style="width:184px;"/>
+                                        </td>
+                                           <td valign="top">
+                                               <b>Corresponding calorie burn</b>
+                                               <br/>
+                                               <select class="select fancy_input">
+                                                   <option value="1">Aerobics, low impact</option>
+                                                   <option value="2">Aerobics, high impact</option>
+                                                   <option value="3">Aerobics , Step low impact</option>
+                                                   <option value="4">Aerobics , Step high impact</option>
+                                                   <option value="5">Aerobics, water</option>
+                                                   <option value="6">Circle training</option>
+                                                   <option value="7">Training cycle, slow</option>
+                                                   <option value="8">Training cycle, fast</option>
+                                                   <option value="9">Rower, slow</option>
+                                                   <option value="10">Rower, fast</option>
+                                               </select>
+                                           </td>
+                                       </tr> 
+                                    </tbody>
+                                    </table> -->
+                                    <div id="after_table1">
+                                      <table id="after_table_child1" cell-spacing="0" cell-padding="0">
+                                       <tbody>
+                                           <tr>
+                                               <td style="width:32px">
+                                                   <div style="margin:0px" class="diary_icon icon_cardio">
+                                                    <img id="activityIcon1" src="https://www.shapelink.com/images/diary_icons/161.png"/>
+                                                </div>
+                                                   <input type="hidden" name="activity_icon_id1" id="activity_icon_id1" value="179"/>
+                                               </td>
+                                               <td>
+                                                   <b>Select a standard icon</b>
+                                               </td>
+                                           </tr>
+                                       </tbody>
+                                      </table>
+                                      <a class="diary_icon icon_cardio" href="#" onclick="set_activity_icon1(170,'170.png')">
+                                        <img id="170" src="https://www.shapelink.com/images/diary_icons/170.png"/>
+                                        
+                                    </a>
+                                    <a class="diary_icon icon_cardio" href="#" onclick="set_activity_icon1(171,'171.png');return false;">
+                                        <img id="171" src="https://www.shapelink.com/images/diary_icons/171.png"/>
+                                        
+                                    </a>
+                                    <a class="diary_icon icon_cardio" href="#" onclick="set_activity_icon1(172,'172.png');return false;">
+                                        <img id="172" src="https://www.shapelink.com/images/diary_icons/172.png"/>
+                                        
+                                    </a>
+                                    <a class="diary_icon icon_cardio" href="#" onclick="set_activity_icon1(173,'173.png');return false;">
+                                        <img id="173" src="https://www.shapelink.com/images/diary_icons/173.png"/>
+                                        
+                                    </a>
+                                    <a class="diary_icon icon_cardio" href="#" onclick="set_activity_icon1(174,'174.png');return false;">
+                                        <img id="174" src="https://www.shapelink.com/images/diary_icons/174.png"/>
+                                        
+                                    </a>
+                                    <a class="diary_icon icon_cardio" href="#" onclick="set_activity_icon1(175,'175.png');return false;">
+                                        <img id="175" src="https://www.shapelink.com/images/diary_icons/175.png"/>
+                                        
+                                    </a>
+                                    <a class="diary_icon icon_cardio" href="#" onclick="set_activity_icon1(176,'176.png');return false;">
+                                        <img id="176" src="https://www.shapelink.com/images/diary_icons/176.png"/>
+                                        
+                                    </a>
+                                    <a class="diary_icon icon_cardio" href="#" onclick="set_activity_icon1(177,'177.png');return false;">
+                                        <img id="177" src="https://www.shapelink.com/images/diary_icons/177.png"/>
+                                        
+                                    </a>
+                                    <a class="diary_icon icon_cardio" href="#" onclick="set_activity_icon1(178,'178.png');return false;">
+                                        <img id="178" src="https://www.shapelink.com/images/diary_icons/178.png"/>
+                                        
+                                    </a>
+                                    <a class="diary_icon icon_cardio" href="#" onclick="set_activity_icon1(179,'179.png')">
+                                        <img id="179" src="https://www.shapelink.com/images/diary_icons/179.png"/>
+                                        
+                                    </a>
+                                    </div>
+                                    <input type="button" id="edit_activity" value="Edit activity" onclick="edit_it()"/>
+                                    <!-- <input type="button" id="Cancel" value="Cancel" onclick="cancel()"/> -->
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="cardiolist">
+            <table id="cardiolist_table" cellspacing="2" cellpadding="3">
+              <tbody>
+                  <tr>
+                      <th id="uractivities" colspan="4">Your activities</th>
+                  </tr>
+                  <tr id="backcountry">
+                      <td class="first_td">
+                          <div>
+                             <img id="to_update_backcountry" src="https://www.shapelink.com/images/diary_icons/79.png"/>
+                          </div>
+                      </td>
+                      <td class="sec_td">
+                         <a id="backcountry_text"  href="backcountry.html">Backcountry Nordic</a>
+                      </td>
+                      <td class="third_td" >
+                          <a><img src="https://www.shapelink.com/images/icons/pencil.png" alt="pencil" class="pencil" id="backcountry_pencil" onclick="edit('backcountry_pencil','backcountry_text','to_update_backcountry')"/></a>
+                      </td>
+                      <td class="third_td">
+                        <a><img src="https://www.shapelink.com/images/icons/cross.png" alt="cross" onclick="del('backcountry')"/></a>
+                      </td>
+                  </tr>
+                  <tr id="Cross-country skiing - Classic">
+                    <td class="first_td">
+                        <div>
+                           <img id="to_update_Cross-country skiing - Classic"src="https://www.shapelink.com/images/diary_icons/156.png"/>
+                        </div>
+                    </td>
+                    <td class="sec_td">
+                       <a id="Cross-country skiing - Classic_text" href="backcountry.html">Cross-country skiing - Classic</a>
+                    </td>
+                    <td class="third_td">
+                        <a><img src="https://www.shapelink.com/images/icons/pencil.png" alt="pencil" id="Cross-country skiing - Classic_pencil" onclick="edit('Cross-country skiing - Classic_pencil','Cross-country skiing - Classic_text','to_update_Cross-country skiing - Classic')"/></a>
+                    </td>
+                    <td class="third_td">
+                      <a><img src="https://www.shapelink.com/images/icons/cross.png" alt="cross" onclick="del('Cross-country skiing - Classic')"/></a>
+                    </td>
+                </tr>
+                <tr id="Cross-country skiing - Skate">
+                    <td class="first_td">
+                        <div>
+                           <img id="to_update_Cross-country skiing - Skate" src="https://www.shapelink.com/images/diary_icons/9.png"/>
+                        </div>
+                    </td>
+                    <td class="sec_td">
+                       <a id="Cross-country skiing - Skate_text" href="backcountry.html">Cross-country skiing - Skate</a>
+                    </td>
+                    <td class="third_td">
+                        <a><img src="https://www.shapelink.com/images/icons/pencil.png" alt="pencil" id="Cross-country skiing - Skate_pencil"onclick="edit('Cross-country skiing - Skate_pencil','Cross-country skiing - Skate_text','to_update_Cross-country skiing - Skate')"/></a>
+                    </td>
+                    <td class="third_td">
+                      <a><img src="https://www.shapelink.com/images/icons/cross.png" alt="cross" onclick="del('Cross-country skiing - Skate')"/></a>
+                    </td>
+                </tr>
+                <tr id="cycling">
+                    <td class="first_td">
+                        <div>
+                           <img src="https://www.shapelink.com/images/diary_icons/76.png"/>
+                        </div>
+                    </td>
+                    <td class="sec_td">
+                       <a  href="backcountry.html">Cycling</a>
+                     
+                    </td>
+                    <td class="third_td">
+                        <a><img src="https://www.shapelink.com/images/icons/pencil.png" alt="pencil" onclick="edit()"/></a>
+                    </td>
+                    <td class="third_td">
+                      <a><img src="https://www.shapelink.com/images/icons/cross.png" alt="cross" onclick="del('cycling')"/></a>
+                    </td>
+                </tr>
+                <tr id="Cycling - Gym Bike">
+                    <td class="first_td">
+                        <div>
+                           <img src="https://www.shapelink.com/images/diary_icons/88.png"/>
+                        </div>
+                    </td>
+                    <td class="sec_td">
+                       <a href="backcountry.html">Cycling - Gym Bike</a>
+                    </td>
+                    <td class="third_td">
+                        <a><img src="https://www.shapelink.com/images/icons/pencil.png" alt="pencil" onclick="edit()"/></a>
+                    </td>
+                    <td class="third_td">
+                      <a><img src="https://www.shapelink.com/images/icons/cross.png" alt="cross" onclick="del('Cycling - Gym Bike')"/></a>
+                    </td>
+                </tr>
+                <tr id="Cycling - MTB">
+                    <td class="first_td">
+                        <div>
+                           <img src="https://www.shapelink.com/images/diary_icons/9.png"/>
+                        </div>
+                    </td>
+                    <td class="sec_td">
+                       <a href="backcountry.html">Cycling - MTB</a>
+                    </td>
+                    <td class="third_td">
+                        <a><img src="https://www.shapelink.com/images/icons/pencil.png" alt="pencil" onclick="edit()"/></a>
+                    </td>
+                    <td class="third_td">
+                      <a><img src="https://www.shapelink.com/images/icons/cross.png" alt="cross" onclick="del('Cycling - MTB')"/></a>
+                    </td>
+                </tr>
+                <tr id="Cycling - Racer">
+                    <td class="first_td">
+                        <div>
+                           <img src="https://www.shapelink.com/images/diary_icons/148.png"/>
+                        </div>
+                    </td>
+                    <td class="sec_td">
+                       <a href="backcountry.html">Cycling - Racer</a>
+                    </td>
+                    <td class="third_td">
+                        <a><img src="https://www.shapelink.com/images/icons/pencil.png" alt="pencil" onclick="edit()"/></a>
+                    </td>
+                    <td class="third_td">
+                      <a><img src="https://www.shapelink.com/images/icons/cross.png" alt="cross" onclick="del('Cycling - Racer')"/></a>
+                    </td>
+                </tr>
+                <tr id="Cykling - Cyclocross">
+                    <td class="first_td">
+                        <div>
+                           <img src="https://www.shapelink.com/images/diary_icons/9.png"/>
+                        </div>
+                    </td>
+                    <td class="sec_td">
+                       <a href="backcountry.html">Cykling - Cyclocross</a>
+                    </td>
+                    <td class="third_td">
+                        <a><img src="https://www.shapelink.com/images/icons/pencil.png" alt="pencil" onclick="edit()"/></a>
+                    </td>
+                    <td class="third_td">
+                      <a><img src="https://www.shapelink.com/images/icons/cross.png" alt="cross" onclick="del('Cykling - Cyclocross')"/></a>
+                    </td>
+                </tr>
+                <tr id="Cykling - Recreational">
+                    <td class="first_td">
+                        <div>
+                           <img src="https://www.shapelink.com/images/diary_icons/49.png"/>
+                        </div>
+                    </td>
+                    <td class="sec_td">
+                       <a href="backcountry.html">Cykling - Recreational</a>
+                    </td>
+                    <td class="third_td">
+                        <a><img src="https://www.shapelink.com/images/icons/pencil.png" alt="pencil" onclick="edit()"/></a>
+                    </td>
+                    <td class="third_td">
+                      <a><img src="https://www.shapelink.com/images/icons/cross.png" alt="cross" onclick="del('Cykling - Recreational')"/></a>
+                    </td>
+                </tr>
+                <tr id="Daily exercise">
+                    <td class="first_td">
+                        <div>
+                           <img src="https://www.shapelink.com/images/diary_icons/171.png"/>
+                        </div>
+                    </td>
+                    <td class="sec_td">
+                       <a href="backcountry.html">Daily exercise</a>
+                    </td>
+                    <td class="third_td">
+                        <a><img src="https://www.shapelink.com/images/icons/pencil.png" alt="pencil" onclick="edit()"/></a>
+                    </td>
+                    <td class="third_td">
+                      <a><img src="https://www.shapelink.com/images/icons/cross.png" alt="cross" onclick="del('Daily exercise')"/></a>
+                    </td>
+                </tr>
+                <tr id="Hiking">
+                    <td class="first_td">
+                        <div>
+                           <img src="https://www.shapelink.com/images/diary_icons/179.png"/>
+                        </div>
+                    </td>
+                    <td class="sec_td">
+                       <a id="Hiking_value" href="backcountry.html">Hiking</a>
+                    </td>
+                    <td class="third_td">
+                        <a><img src="https://www.shapelink.com/images/icons/pencil.png" alt="pencil" onclick="edit('Hiking')"/></a>
+                    </td>
+                    <td class="third_td">
+                      <a><img src="https://www.shapelink.com/images/icons/cross.png" alt="cross" onclick="del('Hiking')"/></a>
+                    </td>
+                </tr>
+                <tr id="Nordic skiing">
+                    <td class="first_td">
+                        <div>
+                           <img src="https://www.shapelink.com/images/diary_icons/58.png"/>
+                        </div>
+                    </td>
+                    <td class="sec_td">
+                       <a href="backcountry.html">Nordic skiing</a>
+                    </td>
+                    <td class="third_td">
+                        <a><img src="https://www.shapelink.com/images/icons/pencil.png" alt="pencil" onclick="edit()"/></a>
+                    </td>
+                    <td class="third_td">
+                      <a><img src="https://www.shapelink.com/images/icons/cross.png" alt="cross" onclick="del('Nordic skiing')"/></a>
+                    </td>
+                </tr>
+                <tr id="Other Cardio">
+                    <td class="first_td">
+                        <div>
+                           <img src="https://www.shapelink.com/images/diary_icons/79.png"/>
+                        </div>
+                    </td>
+                    <td class="sec_td">
+                       <a href="backcountry.html">Other Cardio</a>
+                    </td>
+                    <td class="third_td">
+                        <a><img src="https://www.shapelink.com/images/icons/pencil.png" alt="pencil" onclick="edit()"/></a>
+                    </td>
+                    <td class="third_td">
+                      <a><img src="https://www.shapelink.com/images/icons/cross.png" alt="cross" onclick="del('Other Cardio')"/></a>
+                    </td>
+                </tr>
+                <tr id="Power Walk">
+                    <td class="first_td">
+                        <div>
+                           <img src="https://www.shapelink.com/images/diary_icons/2.png"/>
+                        </div>
+                    </td>
+                    <td class="sec_td">
+                       <a href="backcountry.html">Power Walk</a>
+                    </td>
+                    <td class="third_td">
+                        <a><img src="https://www.shapelink.com/images/icons/pencil.png" alt="pencil" onclick="edit('Power Walk')"/></a>
+                    </td>
+                    <td class="third_td">
+                      <a><img src="https://www.shapelink.com/images/icons/cross.png" alt="cross" onclick="del('Power Walk')"/></a>
+                    </td>
+                </tr>
+                <tr id="Roller Skiing">
+                    <td class="first_td">
+                        <div>
+                           <img src="https://www.shapelink.com/images/diary_icons/49.png"/>
+                        </div>
+                    </td>
+                    <td class="sec_td">
+                       <a href="backcountry.html">Roller Skiing</a>
+                    </td>
+                    <td class="third_td">
+                        <a><img src="https://www.shapelink.com/images/icons/pencil.png" alt="pencil" onclick="edit()"/></a>
+                    </td>
+                    <td class="third_td">
+                      <a><img src="https://www.shapelink.com/images/icons/cross.png" alt="cross" onclick="del('Roller Skiing')"/></a>
+                    </td>
+                </tr>
+                <tr id="Roller Skiing - Classic">
+                    <td class="first_td">
+                        <div>
+                           <img src="https://www.shapelink.com/images/diary_icons/144.png"/>
+                        </div>
+                    </td>
+                    <td class="sec_td">
+                       <a href="backcountry.html">Roller Skiing - Classic</a>
+                    </td>
+                    <td class="third_td">
+                        <a><img src="https://www.shapelink.com/images/icons/pencil.png" alt="pencil" onclick="edit()"/></a>
+                    </td>
+                    <td class="third_td">
+                      <a><img src="https://www.shapelink.com/images/icons/cross.png" alt="cross" onclick="del('Roller Skiing - Classic')"/></a>
+                    </td>
+                </tr>
+                <tr id="Roller Skiing - Skate">
+                    <td class="first_td">
+                        <div>
+                           <img src="https://www.shapelink.com/images/diary_icons/144.png"/>
+                        </div>
+                    </td>
+                    <td class="sec_td">
+                       <a href="backcountry.html">Roller Skiing - Skate</a>
+                    </td>
+                    <td class="third_td">
+                        <a><img src="https://www.shapelink.com/images/icons/pencil.png" alt="pencil" onclick="edit()"/></a>
+                    </td>
+                    <td class="third_td">
+                      <a><img src="https://www.shapelink.com/images/icons/cross.png" alt="cross" onclick="del('Roller Skiing - Skate')"/></a>
+                    </td>
+                </tr>
+                <tr id="Running">
+                    <td class="first_td">
+                        <div>
+                           <img src="https://www.shapelink.com/images/diary_icons/144.png"/>
+                        </div>
+                    </td>
+                    <td class="sec_td">
+                       <a href="backcountry.html">Running</a>
+                    </td>
+                    <td class="third_td">
+                        <a><img src="https://www.shapelink.com/images/icons/pencil.png" alt="pencil" onclick="edit()"/></a>
+                    </td>
+                    <td class="third_td">
+                      <a><img src="https://www.shapelink.com/images/icons/cross.png" alt="cross" onclick="del('Running')"/></a>
+                    </td>
+                </tr>
+                <tr id="Running - Interval">
+                    <td class="first_td">
+                        <div>
+                           <img src="https://www.shapelink.com/images/diary_icons/2.png"/>
+                        </div>
+                    </td>
+                    <td class="sec_td">
+                       <a href="backcountry.html">Running - Interval</a>
+                    </td>
+                    <td class="third_td">
+                        <a><img src="https://www.shapelink.com/images/icons/pencil.png" alt="pencil" onclick="edit()"/></a>
+                    </td>
+                    <td class="third_td">
+                      <a><img src="https://www.shapelink.com/images/icons/cross.png" alt="cross" onclick="del('Running - Interval')"/></a>
+                    </td>
+                </tr>
+                <tr id="Running - Nordic Walking">
+                    <td class="first_td">
+                        <div>
+                           <img src="https://www.shapelink.com/images/diary_icons/2.png"/>
+                        </div>
+                    </td>
+                    <td class="sec_td">
+                       <a href="backcountry.html">Running - Nordic Walking</a>
+                    </td>
+                    <td class="third_td">
+                        <a><img src="https://www.shapelink.com/images/icons/pencil.png" alt="pencil" onclick="edit()"/></a>
+                    </td>
+                    <td class="third_td">
+                      <a><img src="https://www.shapelink.com/images/icons/cross.png" alt="cross" onclick="del('Running - Nordic Walking')"/></a>
+                    </td>
+                </tr>
+                <tr id="Running - Terrain">
+                    <td class="first_td">
+                        <div>
+                           <img src="https://www.shapelink.com/images/diary_icons/128.png"/>
+                        </div>
+                    </td>
+                    <td class="sec_td">
+                       <a href="backcountry.html">Running - Terrain</a>
+                    </td>
+                    <td class="third_td">
+                        <a><img src="https://www.shapelink.com/images/icons/pencil.png" alt="pencil" onclick="edit()"/></a>
+                    </td>
+                    <td class="third_td">
+                      <a><img src="https://www.shapelink.com/images/icons/cross.png" alt="cross" onclick="del('Running - Terrain')"/></a>
+                    </td>
+                </tr>
+                <tr id="Running - Treadmill">
+                    <td class="first_td">
+                        <div>
+                           <img src="https://www.shapelink.com/images/diary_icons/2.png"/>
+                        </div>
+                    </td>
+                    <td class="sec_td">
+                       <a href="backcountry.html">Running - Treadmill</a>
+                    </td>
+                    <td class="third_td">
+                        <a><img src="https://www.shapelink.com/images/icons/pencil.png" alt="pencil" onclick="edit()"/></a>
+                    </td>
+                    <td class="third_td">
+                      <a><img src="https://www.shapelink.com/images/icons/cross.png" alt="cross" onclick="del('Running - Treadmill')"/></a>
+                    </td>
+                </tr>
+                <tr id="Running - Unspecified">
+                    <td class="first_td">
+                        <div>
+                           <img src="https://www.shapelink.com/images/diary_icons/74.png"/>
+                        </div>
+                    </td>
+                    <td class="sec_td">
+                       <a href="backcountry.html">Running - Unspecified</a>
+                    </td>
+                    <td class="third_td">
+                        <a><img src="https://www.shapelink.com/images/icons/pencil.png" alt="pencil" onclick="edit()"/></a>
+                    </td>
+                    <td class="third_td">
+                      <a><img src="https://www.shapelink.com/images/icons/cross.png" alt="cross" onclick="del('Running - Unspecified')"/></a>
+                    </td>
+                </tr>
+                <tr id="Running - With poles">
+                    <td class="first_td">
+                        <div>
+                           <img src="https://www.shapelink.com/images/diary_icons/2.png"/>
+                        </div>
+                    </td>
+                    <td class="sec_td">
+                       <a href="backcountry.html">Running - With poles</a>
+                    </td>
+                    <td class="third_td">
+                        <a><img src="https://www.shapelink.com/images/icons/pencil.png" alt="pencil" onclick="edit()"/></a>
+                    </td>
+                    <td class="third_td">
+                      <a><img src="https://www.shapelink.com/images/icons/cross.png" alt="cross" onclick="del('Running - With poles')"/></a>
+                    </td>
+                </tr>
+                <tr id="Walking">
+                    <td class="first_td">
+                        <div>
+                           <img src="https://www.shapelink.com/images/diary_icons/128.png"/>
+                        </div>
+                    </td>
+                    <td class="sec_td">
+                       <a href="backcountry.html">Walking</a>
+                    </td>
+                    <td class="third_td">
+                        <a><img src="https://www.shapelink.com/images/icons/pencil.png" alt="pencil" onclick="edit()"/></a>
+                    </td>
+                    <td class="third_td">
+                      <a><img src="https://www.shapelink.com/images/icons/cross.png" alt="cross" onclick="del('Walking')"/></a>
+                    </td>
+                </tr>
+                <tr id="Swimming">
+                    <td class="first_td">
+                        <div>
+                           <img src="https://www.shapelink.com/images/diary_icons/20.png"/>
+                        </div>
+                    </td>
+                    <td class="sec_td">
+                       <a href="backcountry.html">Swimming</a>
+                    </td>
+                    <td class="third_td">
+                        <a><img src="https://www.shapelink.com/images/icons/pencil.png" alt="pencil" onclick="edit()"/></a>
+                    </td>
+                    <td class="third_td">
+                      <a><img src="https://www.shapelink.com/images/icons/cross.png" alt="cross" onclick="del('Swimming')"/></a>
+                    </td>
+                </tr>
+                
+              </tbody>
+            </table>
+        </div>
+       
+
+        </div>
+    </div>
+    <div class="footer">
+        <div class="footer_left">
+          <div class="footer_left_img">
+            <img src="https://www.shapelink.com/images/logo.png" alt="logo" />
+          </div>
+          <p>
+            All rights reserved © 2002 - 2020 <br />
+            Developed by Wellnesstech Labs International AB
+          </p>
+          <p>
+            <a href="">Contact Us</a>
+          </p>
+          <p>
+            <a href="">Terms & Conditions</a>
+          </p>
+        </div>
+        <div class="footer_right">
+          <div class="footer_right_img">
+            <img src="fb.png" alt="facebook" class="fb" />
+          </div>
+          <div class="footer_right_img">
+            <img src="inst.png" alt="facebook" />
+          </div>
+          <div class="footer_right_img">
+            <img src="link.png" alt="facebook" />
+          </div>
+          <div class="footer_right_img">
+            <img src="apple.png" alt="facebook" />
+          </div>
+          <div class="footer_right_img">
+            <img src="android.png" alt="facebook" />
+          </div>
+        </div>
+      </div>
+      <!-- <div class="modal_bg">
+        <div class="modal">
+          <div class="modal_inner">
+            <p>LOGIN</p>
+            <input type="email" id="email" />
+            <br />
+            <input type="password" id="" />
+            <div class="checkbox">
+              <p><input type="checkbox" /> Log in automatically next time</p>
+            </div>
+            <button class="btn"><a href="">Login</a></button>
+            <p class="or">or</p>
+            <div class="fb_login">
+              <i class="fab fa-facebook-square"></i>
+              <p>Login with Facebook</p>
+            </div>
+          </div>
+          <i class="fa fa-times modal_close"></i>
+        </div>
+      </div> -->
+    <script src="cardio.js"></script> 
+</body>
+</html>
